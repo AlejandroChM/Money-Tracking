@@ -1,0 +1,45 @@
+<h3>Accounts list</h3>
+	<div class="container">
+		<a href="<?php
+		/**
+		 * index.php vista de cuentas 
+		 *
+		 * @author Jose Alejandro Chan Martin <alejandrochanmartin1@gmail.com>
+		 */
+
+ 		echo APP_URL.'accounts/add'; ?>">
+			<button class="btn btn-sm btn-dark"><i class="glyphicon glyphicon-plus"></i>Add account</button>
+		</a>
+		<?php if (!empty($this->accounts)): ?>
+			<table class="table table-sm">
+				<thead class="thead-light">
+					<tr>
+						<th>Name</th>
+						<th>Options</th>
+					</tr>		
+				</thead>
+				<tbody>
+					<?php foreach ($this->accounts as $account): ?>
+					<tr>
+						<td>
+							<?php echo $account['name']; ?>
+						</td>
+						<td>
+							<a href="<?php echo APP_URL.'accounts/update/'.$account['id']; ?>">
+									<button class="btn btn-sm btn-primary">
+										<i class="glyphicon glyphicon-pencil"></i>
+									</button>
+							</a>
+							<a href="<?php echo APP_URL.'accounts/delete/'.$account['id']; ?>">
+									<button class="btn btn-sm btn-danger confirmation">
+										<i class="glyphicon glyphicon-trash"></i>
+									</button>
+							</a>
+						</td>
+					</tr>
+					<?php endforeach ?>
+				</tbody>
+			</table>	
+		<?php else: ?>
+		<?php endif ?>
+	</div>

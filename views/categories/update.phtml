@@ -1,0 +1,19 @@
+<h2>Edit category</h2>
+	<div class="container">
+		<div class="col-sm-12 col-md-8 mx-auto">
+			<form action="<?php
+			/**
+			 * update.phtml
+			 *
+			 * @author Jose Alejandro Chan Martin <alejandrochanmartin1@gmail.com>
+			 */
+ 			echo APP_URL.'categories/update'; ?>" method="POST">
+				<input type="hidden" value="<?php echo $this->category['id']; ?>" name="id">
+					<div class="form-group">
+						<label for="name">Name</label>
+						<input type="text" class="form-control" name="name" value="<?php echo $this->category['name']; ?>">
+					</div>
+				<button class="btn btn-sm btn-success pull-right" action="submit">Save</button>
+			</form>
+		</div>
+	</div>

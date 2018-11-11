@@ -1,0 +1,18 @@
+<h2>Add category</h2>
+	<div class="container">
+		<div class="col-sm-12 col-md-8 mx-auto">
+			<form action="<?php
+			/**
+			 * add.phtml
+			 *
+			 * @author Jose Alejandro Chan Martin <alejandrochanmartin1@gmail.com>
+			 */
+ 			echo APP_URL.'categories/add'; ?>" method="POST">
+				<div class="form-group">
+					<label for="name">Name</label>
+					<input class="form-control" type="text" name="name">
+				</div>	
+					<button class="btn btn-sm btn-success pull-right" action="submit">Save</button>
+			</form>
+		</div>
+	</div>

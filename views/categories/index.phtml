@@ -1,0 +1,47 @@
+<h3>Categories list</h3>
+	<div class="container">
+		<a href="<?php
+		/**
+		 * update.phtml
+		 *
+		 * @author Jose Alejandro Chan Martin <alejandrochanmartin1@gmail.com>
+		 */
+		echo APP_URL.'categories/add'; ?>">
+		<button class="btn btn-sm btn-dark"><i class="glyphicon glyphicon-plus"></i>Add category</button>	
+		</a>
+			<?php if (!empty($this->categories)): ?>
+		<table class="table table-sm">
+			<thead class="thead-light">
+				<tr>
+					<th>Name</th>
+					<th>Options</th>
+				</tr>
+			</thead>
+		<tbody>
+			<?php foreach ($this->categories as $category): ?>
+				<tr>
+					<td>
+						<?php echo $category['name']; ?>
+					</td>
+					<td>
+						<a href="<?php echo APP_URL.'categories/update/'.$category['id']; ?>">
+							<button class="btn btn-sm btn-primary">
+								<i class="glyphicon glyphicon-pencil"></i>
+							</button>
+						</a>
+						<a href="<?php echo APP_URL.'categories/delete/'.$category['id']; ?>">
+							<button class="btn btn-sm btn-danger confirmation">
+								<i class="glyphicon glyphicon-trash"></i>
+							</button>
+						</a>
+					</td>
+				</tr>
+			<?php endforeach ?>
+		</tbody>
+	</table>
+<?php else: ?>
+	<div>
+		Categories not found
+	</div>
+<?php endif ?>
+</div>

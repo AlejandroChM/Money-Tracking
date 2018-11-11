@@ -1,0 +1,18 @@
+<h2>Add account</h2>
+	<div class="container">
+		<div class="col-sm-6 col-md-8 mx-auto">
+			<form action="<?php
+			/**
+			 * add.php
+			 *
+			  * @author Jose Alejandro Chan Martin <alejandrochanmartin1@gmail.com>
+			 */
+	 			echo APP_URL.'accounts/add'; ?>" method="POST">
+					<div class="form-group">
+						<label for="name">Name</label>
+						<input type="text" class="form-control" name="name">
+					</div>
+				<button class="btn btn-sm btn-success pull-right" type="submit">Save</button>
+			</form>
+		</div>
+	</div>
